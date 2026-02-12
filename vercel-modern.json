@@ -1,5 +1,8 @@
 {
   "version": 2,
+  "buildCommand": "uv sync",
+  "outputDirectory": ".vercel/output",
+  "installCommand": "uv sync",
   "routes": [
     {
       "src": "/static/(.*)",
