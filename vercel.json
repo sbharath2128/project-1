@@ -5,8 +5,7 @@
       "src": "caraccessories_shop/asgi.py",
       "use": "@vercel/python",
       "config": {
-        "maxLambdaSize": "50mb",
-        "installCommand": "uv sync"
+        "maxLambdaSize": "50mb"
       }
     }
   ],
