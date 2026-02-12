@@ -12,12 +12,10 @@
   ],
   "routes": [
     {
-      "handle": "filesystem",
       "src": "/static/(.*)",
       "dest": "/static/$1"
     },
     {
-      "handle": "filesystem",
       "src": "/media/(.*)",
       "dest": "/media/$1"
     },
