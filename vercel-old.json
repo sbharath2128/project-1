@@ -1,5 +1,4 @@
 {
-  "version": 2,
   "builds": [
     {
       "src": "caraccessories_shop/asgi.py",
@@ -8,22 +7,34 @@
         "maxLambdaSize": "50mb",
         "installCommand": "uv sync"
       }
+    },
+    {
+      "src": "staticfiles/**/*",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "handle": "filesystem",
       "src": "/static/(.*)",
       "dest": "/static/$1"
     },
     {
-      "handle": "filesystem",
       "src": "/media/(.*)",
       "dest": "/media/$1"
     },
     {
+      "src": "/admin/(.*)",
+      "dest": "caraccessories_shop/asgi.py"
+    },
+    {
       "src": "/(.*)",
       "dest": "caraccessories_shop/asgi.py"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/caraccessories_shop/asgi.py"
     }
   ]
 }
