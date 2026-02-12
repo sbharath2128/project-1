@@ -1,0 +1,26 @@
+{
+  "builds": [
+    {
+      "src": "caraccessories_shop/asgi.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "50mb",
+        "installCommand": "uv sync"
+      }
+    },
+    {
+      "src": "staticfiles/**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "caraccessories_shop/asgi.py"
+    }
+  ]
+}
