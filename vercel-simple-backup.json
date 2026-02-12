@@ -1,15 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "caraccessories_shop/asgi.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "50mb",
-        "installCommand": "uv sync"
-      }
-    }
-  ],
   "routes": [
     {
       "src": "/static/(.*)",
